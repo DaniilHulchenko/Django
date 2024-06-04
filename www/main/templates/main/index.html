@@ -1,0 +1,280 @@
+{% extends 'main/layout.html'%}
+
+{% load static%}
+
+{% block title %}
+SilverSide
+{% endblock %}
+
+
+{% block content %}
+<div id='articles'>
+			<article>
+				<img src="{% static 'articles/img/1.jpg' %}" alt="5" title="1">
+				<h2>Old ship</h2>
+				<p>This ship is very beautiful, it keeps its way during a strong storm.</p>
+				<a href="articles/1">See more</a>
+			</article>
+			<article>
+				<img src="{% static 'articles/img/2.jpg' %}" alt="5" title="2">
+				<h2>Black forest</h2>
+				<p>This is a very old and spooky forest, which is inhabited by many monsters</p>
+				<a href="articles/2">See more</a>
+			</article>
+			<article>
+				<img src="{% static 'articles/img/3.jpg' %}" alt="1" title="3">
+				<h2>Night moon</h2>
+				<p>Full moon with tree shadow</p><br>
+				<a href="articles/3">See more</a>
+			</article>
+		</div>
+
+		<div class='clear'>
+			<div id='main_social_block'>
+				<div id='main_social_block_content'>
+					<h2>Silverside wallpaper </h2>
+					<h3>Our site is designed to help you choose wallpaper for your beautiful desktop!</h3>
+				</div>
+			</div>
+		</div>
+		<div id='articles'>
+			<article>
+				<img src="{% static 'articles/img/4.jpg' %}" alt="1" title="4">
+				<h2>Old House</h2>
+				<p>This House is very beautiful, it was made a lot of years ago.</p>
+				<a href="articles/4.html">See more</a>
+			</article>
+			<article>
+				<img src="{% static 'articles/img/5.jpg' %}" alt="1" title="5">
+				<h2>Black forest</h2>
+				<p>This is a very old and spooky forest, which is inhabited by many monsters</p>
+				<a href="articles/5.html">See more</a>
+			</article>
+			<article>
+				<img src="{% static 'articles/img/6.jpg' %}" alt="1" title="6">
+				<h2>Old house under show</h2>
+				<p>A little house at winter midday</p><br>
+				<a href="articles/6.html">See more</a>
+			</article>
+		</div>
+
+		<div id='articles'>
+			<article>
+				<img src="{% static 'articles/img/7.jpg' %}" alt="1" title="7">
+				<h2>House under the snow</h2>
+				<p>A little house at winter midday</p><br>
+				<a href="articles/7.html">See more</a>
+			</article>
+			<article>
+				<img src="{% static 'articles/img/8.jpg' %}" alt="1" title="8">
+				<h2>Old House in the middle of forest</h2>
+				<p>House in the wilderness</p>
+				<a href="articles/8.html">See more</a>
+			</article>
+			<article>
+				<img src="{% static 'articles/img/9.jpg' %}" alt="1" title="9">
+				<h2>House under the snow</h2>
+				<p>A little house at winter evening.</p><br>
+				<a href="articles/9.html">See more</a>
+			</article>
+</div>
+{% endblock %}
+
+{%block navigation %}
+<!--<div class="b-navigation">-->
+<!--	<span>1</span>-->
+<!--	<a rel="nofollow" href="pages/2.html">2</a>-->
+<!--	<a rel="nofollow" href="pages/3.html">3</a>-->
+<!--</div>-->
+	{% include 'main/navigation_test.html' %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--{% load static %}-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--	<meta charset="utf-8">-->
+<!--	<meta name="viewport" content="width=device-width, initial-scale=1">-->
+
+<!--	<meta name="keywords" content="test, just site">-->
+<!--	<meta name="description" content="Просто пробный сайт">-->
+
+<!--	<link href="{% static 'main/css/style.css' %}" rel="stylesheet" type="text/css" />-->
+<!--	<link href="{% static 'main/img/icon.png' %}" rel="shortcut icon" type="image/x-icon" />-->
+
+<!--	&lt;!&ndash; <script type="text/javascript" src="js/main.js"></script> &ndash;&gt;-->
+
+<!--	<title>SilverSide</title>-->
+<!--</head>-->
+<!--&lt;!&ndash; <body bgcolor="#333"> &ndash;&gt;-->
+<!--<body>-->
+<!--	<div id='page-wrap'>-->
+<!--		<header>-->
+<!--			<h1>-->
+<!--&lt;!&ndash;				<a href='/' title="Главная" id='logo' >SilverSide</a>&ndash;&gt;-->
+<!--				<a href='{% url "home" %}' title="Главная" id='logo' >SilverSide</a>-->
+<!--			<span class="right">-->
+<!--				<a href="#" class='openModalSU'>Sign up&ensp;</a>-->
+<!--			  &lt;!&ndash; <a onclick="document.querySelector('#sign_in').showModal();" class='openModal'>sign in</a> &ndash;&gt;-->
+<!--				<a class='openModalSI'>Sign in</a>-->
+<!--			</span>-->
+<!--			</h1>-->
+<!--			<dialog id='sign_in' >-->
+<!--				<div class="closeModalSI" >-->
+<!--					<h1>Sign in</h1>-->
+<!--					<form id="signin" method="" action="" autocomplete="off">-->
+<!--						<input type="text" id="user" name="user" placeholder="Username" />-->
+<!--						<input type="password" id="pass" name="pass" placeholder="Password" />-->
+<!--						<button type="submit">⨀</button>-->
+<!--						<p>Forgot your password? <a href="#">click here</a></p>-->
+<!--					</form>-->
+<!--				</div>-->
+<!--				&lt;!&ndash; <script type="text/javascript"></script> &ndash;&gt;-->
+<!--			</dialog>-->
+<!--			<dialog id='sign_up' >-->
+<!--				<div class="closeModalSU" >-->
+<!--					<h1>Sign up</h1>-->
+<!--					<form id="signup" method="" action="" autocomplete="off">-->
+<!--						<input type="text" id="user" name="user" placeholder="Username" /><hr>-->
+<!--						<input type="email" id="email" name="email" placeholder="Email" /><hr>-->
+<!--						<input type="password" id="pass" name="pass" placeholder="Password" /><hr>-->
+<!--						<input type="password" id="pass" name="pass" placeholder="Password confirm" />-->
+<!--						<button type="submit">⨀</button>-->
+<!--						&lt;!&ndash; <p>Forgot your password? <a href="#">click here</a></p> &ndash;&gt;-->
+<!--					</form>-->
+<!--				</div>-->
+<!--				&lt;!&ndash; <script type="text/javascript"></script> &ndash;&gt;-->
+<!--			</dialog>-->
+<!--				<script type="text/javascript" src="{% static 'main/js/sign_handlers.js' %}"></script>-->
+
+
+
+<!--&lt;!&ndash; 			<div class="modal">-->
+<!--				<div class='modal-window'>-->
+<!--					<h1>hi</h1>-->
+<!--					<button class="close-popup">X</button>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<script src="js/main.js"></script>-->
+<!-- &ndash;&gt;-->
+<!--		</header>-->
+<!--		<div class='clear'>-->
+<!--			<br>-->
+<!--			<center>-->
+<!--				<div id='menu'>Sections<hr /></div>-->
+<!--				<div id='menuHrefs'>-->
+
+<!--					<a href="{% url 'about' %}">About us</a>-->
+<!--					<a href="feedback.html">Contact us</a>-->
+<!--					<a href="locations.html">Our location</a>-->
+<!--					&lt;!&ndash; <a href=""></a> &ndash;&gt;-->
+<!--				</div>-->
+<!--			</center>-->
+<!--			<div id='wrapper'>-->
+<!--				<div id='articles'>-->
+<!--					<article>-->
+<!--						<img src="{% static 'main/img/1.jpg' %}" alt="5" title="1">-->
+<!--						<h2>Old ship</h2>-->
+<!--						<p>This ship is very beautiful, it keeps its way during a strong storm.</p>-->
+<!--						<a href="articles/1.html">See more</a>-->
+<!--					</article>-->
+<!--					<article>-->
+<!--						<img src="{% static 'main/img/2.jpg' %}" alt="5" title="2">-->
+<!--						<h2>Black forest</h2>-->
+<!--						<p>This is a very old and spooky forest, which is inhabited by many monsters</p>-->
+<!--						<a href="articles/2.html">See more</a>-->
+<!--					</article>-->
+<!--					<article>-->
+<!--						<img src="{% static 'main/img/3.jpg' %}" alt="1" title="3">-->
+<!--						<h2>Night moon</h2>-->
+<!--						<p>Full moon with tree shadow</p><br>-->
+<!--						<a href="articles/3.html">See more</a>-->
+<!--					</article>-->
+<!--				</div>-->
+
+<!--				<div class='clear'>-->
+<!--					<div id='main_social_block'>-->
+<!--						<div id='main_social_block_content'>-->
+<!--							<h2>Silverside wallpaper </h2>-->
+<!--							<h3>Our site is designed to help you choose wallpaper for your beautiful desktop!</h3>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div id='articles'>-->
+<!--					<article>-->
+<!--						<img src="{% static 'main/img/4.jpg' %}" alt="1" title="4">-->
+<!--						<h2>Old House</h2>-->
+<!--						<p>This House is very beautiful, it was made a lot of years ago.</p>-->
+<!--						<a href="articles/4.html">See more</a>-->
+<!--					</article>-->
+<!--					<article>-->
+<!--						<img src="{% static 'main/img/5.jpg' %}" alt="1" title="5">-->
+<!--						<h2>Black forest</h2>-->
+<!--						<p>This is a very old and spooky forest, which is inhabited by many monsters</p>-->
+<!--						<a href="articles/5.html">See more</a>-->
+<!--					</article>-->
+<!--					<article>-->
+<!--						<img src="{% static 'main/img/6.jpg' %}" alt="1" title="6">-->
+<!--						<h2>Old house under show</h2>-->
+<!--						<p>A little house at winter midday</p><br>-->
+<!--						<a href="articles/6.html">See more</a>-->
+<!--					</article>-->
+<!--				</div>-->
+
+<!--				<div id='articles'>-->
+<!--					<article>-->
+<!--						<img src="{% static 'main/img/7.jpg' %}" alt="1" title="7">-->
+<!--						<h2>House under the snow</h2>-->
+<!--						<p>A little house at winter midday</p><br>-->
+<!--						<a href="articles/7.html">See more</a>-->
+<!--					</article>-->
+<!--					<article>-->
+<!--						<img src="{% static 'main/img/8.jpg' %}" alt="1" title="8">-->
+<!--						<h2>Old House in the middle of forest</h2>-->
+<!--						<p>House in the wilderness</p>-->
+<!--						<a href="articles/8.html">See more</a>-->
+<!--					</article>-->
+<!--					<article>-->
+<!--						<img src="{% static 'main/img/9.jpg' %}" alt="1" title="9">-->
+<!--						<h2>House under the snow</h2>-->
+<!--						<p>A little house at winter evening.</p><br>-->
+<!--						<a href="articles/9.html">See more</a>-->
+<!--					</article>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--<div class="b-navigation">-->
+<!--	<span>1</span>-->
+<!--	<a rel="nofollow" href="pages/2.html">2</a>-->
+<!--	<a rel="nofollow" href="pages/3.html">3</a>-->
+<!--	<footer>-->
+<!--		<span>This site was designed by <strong>Silverus Morgan</strong></span>-->
+<!--	</footer>-->
+<!--</body>-->
+<!--</html>-->

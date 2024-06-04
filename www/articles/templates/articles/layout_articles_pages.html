@@ -1,0 +1,54 @@
+{% extends 'main/layout.html '%}
+{% load static %}
+
+{% block title %}
+Page: {{ page_num }} {{ cat.0.name }}
+{% endblock %}
+
+{% block content %}
+<div id='articles'>
+			{% if items %}
+				{% for i in items %}
+					<article>
+						<img src="{{ i.photo.url }}" title="{{ i.id }}">
+						<strong><a id="article_id_page" style="all: unset; float: right;margin-right: 3px;color: white;cursor: pointer;text-decoration: underline;position:relative; top:5px;" href="{{ i.cat.get_absolute_url }}">{{i.cat}}</a></strong>
+						<h2>{{ i.title }}</h2>
+						{% autoescape off %}<p>{{ i.anons }}</p>{% endautoescape %}
+
+<!--						<a href="{% url 'art-detail' i.id %}?">See more</a>-->
+{#<!--						<a href="{{ i.get_absolute_url }}">See more</a>-->#}
+							<a href="{{ i.get_absolute_url_slug }}">See more</a>
+
+					</article>
+
+
+
+				{% endfor %}
+			{% else %}
+				<center><br><br><br><br><h1 style="color :white;">Ooops, nothing here</h1></center>
+			{% endif %}
+</div>
+{% endblock %}
+
+
+{% block navigation %}
+{#{% include 'main/navigation_test.html ' %}#}
+
+{% if page_obj.has_other_pages %}
+	<div class="b-navigation">
+		<ul>
+			<strong>
+				{% for i in paginator.page_range %}
+					{% if i == page_obj.number %}
+						<span><a rel="nofollow" href="?page={{i}}">{{i}}</a></span>
+					{% else %}
+						<a rel="nofollow" href="?page={{i}}">{{i}}</a>
+					{% endif %}
+				{% endfor %}
+
+			</strong>
+		</ul>
+	</div>
+{% endif %}
+
+{% endblock %}

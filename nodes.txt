@@ -1,0 +1,11 @@
+django-admin startproject имя проекта
+
+python manage.py startapp имя приложения
+
+python www/manage.py runserver
+
+python www/manage.py makemigrations
+
+python www/manage.py migrate
+
+python www/manage.py createsuperuser

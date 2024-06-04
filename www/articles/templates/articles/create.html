@@ -1,0 +1,22 @@
+{% extends 'articles/layout_articles_details.html' %}
+
+{% block title %}
+Create article
+{% endblock %}
+
+
+{% block content %}
+    <h1 style="margin-top: 0;"> Creation form </h1>
+    <form method="post" class="contact_form">
+        {% csrf_token %}
+
+        {{ form }}
+<!--            {{ form.title }}-->
+<!--            {{ form.anons }}-->
+<!--            {{ form.description }}-->
+<!--            {{ form.photoid }}-->
+<!--            {{ form.date }}-->
+            <span style="border: 3px solid red ; padding:3px; border-radius:5px;"> {{ error }}</span>
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}

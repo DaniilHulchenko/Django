@@ -1,0 +1,112 @@
+{% load static %}
+{% load main_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="keywords" content="test, just site">
+	<meta name="description" content="Просто пробный сайт">
+
+	<link href="{% static 'main/css/style.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'main/img/icon.png' %}" rel="shortcut icon" type="image/x-icon" />
+
+	{% block extrastyle %}
+	{% endblock %}
+
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+	<div id='page-wrap'>
+		<header>
+			<h1>
+				<a href='{% url "home" %}' title="Главная" id='logo' >SilverSide</a>
+			<span class="right">
+				{% if not request.user.is_authenticated %}
+					<a class='openModalSU'>Sign up&ensp;</a>
+					<a class='openModalSI'>Sign in</a>
+				{% else %}
+					<a href="{% url 'account' request.user.pk %}">{{ request.user.username }} </a>
+					<span style="color:#333;">|</span>
+					<a href="{% url 'logout'%}">Logout</a>
+				{% endif %}
+			</span>
+			</h1>
+<!--	Registration menu 		-->
+			{% include 'main/dialog_reg.html'%}
+			<script type="text/javascript" src="{% static 'main/js/sign_handlers.js'%}"></script>
+
+<!-- SideBar: left menu -->
+			<div id="nav-btn"></div>
+			<dialog id="more_options" >
+
+				<div id="more_options_wrapper">
+						<img src="{% static 'main/img/icon.png' %}">
+						<span class="logo">SilverSide</span>
+<!--						<h3>Navigation</h3>-->
+						<h3>Categories</h3>
+						<hr>
+						{% if cat_selected == 0 %}
+							<strong><a>All</a></strong>
+						{% else %}
+<!--							<a href="{% url 'articles_pages' 1 %}">All</a>-->
+								<a href="{% url 'show_cat' 'all' %}">All</a>
+						{% endif %}
+
+						{% get_cats as cat %}
+						{% for i in cat %}
+							{% if i.id == cat_selected %}
+								<strong><a> {{i.name}} </a></strong>
+							{% else %}
+									<a href="{{ i.get_absolute_url }}">{{i.name}}</a>
+<!--									<a href="{% url 'show_cat' i.id %}">{{i.name}}</a>-->
+							{% endif %}
+						{% endfor %}
+						<h3 style="margin-right:10%"><br><br>Other</h3><hr>
+							<a href="/admin">Admin panel</a>
+<!--						<a href="{% url 'reg' %}">reg</a>-->
+<!--							<a href="{% url 'logout'%}">Logout</a>-->
+
+				</div>
+			</dialog>
+			<script type="text/javascript" src="{% static 'main/js/more_options.js' %}"></script>
+
+		</header>
+		<div class='clear'>
+			<br>
+			<center>
+				<div id='menu'>Sections<hr /></div>
+				<div id='menuHrefs'>
+
+					<a href="{% url 'about' %}">About us</a>
+					<a href="{% url 'feedback' %}">Contact us</a>
+					<a href="{% url 'location' %}">Our location</a>
+				</div>
+			</center>
+
+
+			<div id='wrapper'>
+<!--				<div id='articles'>-->
+<!--					<center>-->
+                    {% block content %} {% endblock %}
+<!--					</center>-->
+<!--				</div>-->
+			</div>
+		</div>
+	</div>
+	{%block navigation %}{% endblock %}
+	<footer>
+		<span>This site was designed by Silverus Morgan</span>
+	</footer>
+</body>
+
+</html>
+
+
+
+
+<!-- &nbsp; неразрывный пробел
+&thinsp; узкий пробел (применяют в двойных словах)
+&ensp; средний, разрывной пробел
+&emsp; длинный разрывной пробел (примеяют в конце предложений)-->

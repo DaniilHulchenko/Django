@@ -1,0 +1,9 @@
+#header, #content-main caption, .sticky caption {
+	background-color:rgb(64, 0, 0);
+}
+div.breadcrumbs{
+	background-color:rgb(100, 0, 0);
+}
+a:link, a:visited{
+	color:white;
+}

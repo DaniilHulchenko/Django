@@ -1,0 +1,65 @@
+{% load main_tags %}
+
+
+<!--                          sign_in                                       -->
+			<dialog id='sign_in' >
+				<div class="closeModalSI" >
+					<h1>Sign in</h1>
+					<form id="signin" method="post"  autocomplete="off">
+<!--						<input type="text" id="user" name="user" placeholder="Username" />-->
+<!--						<input type="password" id="pass" name="pass" placeholder="Password" />-->
+						{% csrf_token %}
+						{% get_log_form request as log %}
+						{{log.form}}
+						<button type="submit">⨀</button>
+						{% if log.open == 1 %}
+							<span style="color:red; font-size:1.5; float:right;">Something not correct</span>
+							<br>
+						{% endif %}
+						<p>Forgot your password? <a href="#">click here</a></p>
+					</form>
+				</div>
+			</dialog>
+			{% if log.open == 1 %}
+				<script>
+					document.querySelector('#sign_in').showModal();
+				</script>
+			{% endif %}
+
+
+
+<!--                          sign_up                                       -->
+			<dialog id='sign_up' >
+				<div class="closeModalSU" >
+					<h1>Sign up</h1>
+					<form id="signup" method="post" action="{% url 'home' %}">
+						{% csrf_token %}
+						<input type="hidden" name="return_to" value="{{ return_to_url }}">
+						{% get_reg_form request as reg %}
+						{% for i in reg.form %}
+							{{i}}
+							<div class="form-error">{{ i.errors }}</div>
+							{% if i.name != "password2" %}
+								<hr>
+							{% endif %}
+						{% endfor %}
+						<button type="submit">⨀</button>⩥
+						<p style="margin-top:-5%;">Already have account ? <a class="already_have_account" >Sign in!</a></p>
+					</form>
+				</div>
+
+			</dialog>
+
+			{% if reg.open == 1 %}
+				<script>
+					document.querySelector("#sign_up").showModal();
+				</script>
+			{% endif %}
+
+
+			{% if log.refresh == 1 or reg.refresh == 1 %}
+				<script>
+					window.location.href = '/';
+				</script>
+			{% endif %}
+

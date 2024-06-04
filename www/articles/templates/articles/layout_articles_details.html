@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title%}{{art.title}}{% endblock %}
+{% block content %}
+					<br>
+					<div class="article_more_content">
+						<img src="{{ art.photo.url }}">
+						<h1>{{art.title}}</h1>
+						<a target="_blank" id="button" href="{{art.photo.url}}" download></a>
+						<label for="button">Download picture now<br> without ABS and SMS!</label>
+						<span>{{art.description}}</span>
+					</div>
+
+{% endblock %}

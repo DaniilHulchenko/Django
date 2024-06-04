@@ -1,0 +1,21 @@
+{% extends 'main/layout.html'%}
+{% load main_tags %}
+
+{% block title %}
+Registrations
+{% endblock %}
+
+{% block content %}
+    <form method="post" style="color:white; clear:both; align-content: left; text-align: left;">
+        {% csrf_token %}
+        <center >
+<!--            <br><br>-->
+            {% get_reg_form as r %}
+            {{ r.as_p }}
+<!--            {{ form.as_p }}-->
+<!--        Congratilations!-->
+
+        <button type="submit">Submit</button>
+        </center>
+    </form>
+{% endblock %}
